@@ -2,11 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import { containerVariants, nextVariants } from './Base';
+
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = ['mushrooms', 'peppers', 'onions', 'olives', 'extra cheese', 'tomatoes'];
 
   return (
-    <div className="toppings container">
+    <motion.div
+      className="toppings container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
 
       <h3>Step 2: Choose Toppings</h3>
       <ul>
@@ -19,26 +26,29 @@ const Toppings = ({ addTopping, pizza }) => {
               whileHover={{ scale: 1.3, color: '#f8e112', originX: 0 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <span className={spanClass}>{ topping }</span>
+              <span className={spanClass}>{topping}</span>
             </motion.li>
-          )
+          );
         })}
       </ul>
 
       <Link to="/order">
         <motion.button
+          variants={nextVariants}
+          initial="hidden"
+          animate="visible"
           whileHover={{
             scale: 1.1,
-            textShadow: "0 0 8px rgb(255, 255, 255)",
-            boxShadow: "0 0 8px rgb(255, 255, 255)"
+            textShadow: '0 0 8px rgb(255, 255, 255)',
+            boxShadow: '0 0 8px rgb(255, 255, 255)'
           }}
         >
           Order
         </motion.button>
       </Link>
 
-    </div>
-  )
-}
+    </motion.div>
+  );
+};
 
 export default Toppings;

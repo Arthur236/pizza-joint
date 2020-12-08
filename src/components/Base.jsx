@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import { buttonVariants } from './Home';
+
 export const containerVariants = {
   hidden: {
     opacity: 0,
@@ -27,14 +29,6 @@ export const nextVariants = {
       type: 'spring',
       stiffness: 120
     }
-  }
-}
-
-export const buttonVariants = {
-  hover: {
-    scale: 1.1,
-    textShadow: "0 0 8px rgb(255, 255, 255)",
-    boxShadow: "0 0 8px rgb(255, 255, 255)"
   }
 }
 

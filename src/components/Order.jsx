@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
@@ -15,6 +15,13 @@ const containerVariants = {
       damping: 8,
       when: 'beforeChildren',
       staggerChildren: 0.6
+    }
+  },
+  exit: {
+    x: '-100vw',
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.5
     }
   }
 };
@@ -35,6 +42,7 @@ const Order = ({ pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <h2>Thank you for your order :)</h2>
 

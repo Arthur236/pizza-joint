@@ -40,7 +40,7 @@ const Loader = () => {
         variants={loaderVariants}
         animate={animation}
       />
-      
+
       <div onClick={() => cycleAnimation()}>Change Loader</div>
     </>
   );

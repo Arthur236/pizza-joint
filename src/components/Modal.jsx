@@ -26,7 +26,7 @@ const modalVariants = {
 }
 
 const Modal = (props) => {
-  const { showModal, setShowModal } = props;
+  const { showModal } = props;
 
   return (
     <AnimatePresence exitBeforeEnter>
